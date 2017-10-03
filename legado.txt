@@ -1,0 +1,17 @@
+include 'src/service/PessoaService.php';
+use src\service\PessoaService;
+$cabecalho = getallheaders();
+echo $_GET ['url'] . "<br/>";
+echo $_SERVER['REQUEST_URI']."<br/>";
+foreach ($cabecalho as $name => $value) {
+    echo $name." : ".$value;
+    echo "<br/>";
+}
+echo "raiz<br/>";
+$Mensagem = "Hello world!<br/>";
+echo $Mensagem;
+$servico = new PessoaService();
+$pessoa = $servico->getPessoa();
+echo "id : ".$pessoa->getID()."<br/>";
+echo "nome : ".$pessoa->getNome()."<br/>";
+echo "idade : ".$pessoa->getIdade()." anos<br/>";
